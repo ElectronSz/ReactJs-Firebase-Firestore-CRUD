@@ -1,13 +1,11 @@
-# React Hooks & Firebase Firestore Tutorial
+# React Hooks & Firebase Firestore Application
 
-#### In this tutorial, we'll make a simple CRUD app that can add, update, or delete users using React Hooks, Bootstrap and Firebase Firestore
+#### A simple CRUD app that can add, update, or delete users using React Hooks, Bootstrap and Firebase Firestore
 
-### [View the demo](https://taniarascia.github.io/react-hooks/) initial project
-
-## Author
+## Authors
 
 - [Tania Rascia](https://www.taniarascia.com)
-- [Lwazi Dlamini](https://electronsz.github.com/)
+- [Lwazi Dlamini](https://electronsz.github.io/)
 
 ## License
 
