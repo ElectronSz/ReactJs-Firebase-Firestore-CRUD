@@ -1,7 +1,8 @@
 import React from 'react'
 
 const UserTable = (props) => (
-    <table className="table striped">
+
+    <table class="uk-table uk-table-divider">
         <thead>
             <tr>
                 <th>Name</th>
@@ -16,8 +17,8 @@ const UserTable = (props) => (
                         <td>{user.name}</td>
                         <td>{user.username}</td>
                         <td>
-                            <button onClick={() => {props.editRow(user)}} className="btn btn-primary">Edit</button>
-                            <button onClick={() => props.deleteUser(user.id)} className="btn btn-danger ml-2">Delete</button>
+                            <button onClick={() => { props.editRow(user) }} className="uk-button uk-button-primary uk-button-small"><span uk-icon="pencil"></span></button>
+                            <button onClick={() => props.deleteUser(user.id)} className="uk-button uk-button-danger uk-button-small ml-2"><span uk-icon="trash"></span></button>
                         </td>
                     </tr>
                 ))
@@ -28,6 +29,7 @@ const UserTable = (props) => (
                 )}
         </tbody>
     </table>
+    
 )
 
 export default UserTable
