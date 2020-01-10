@@ -32,7 +32,7 @@ const NewUser = props => {
             <input className="form-control" type="text" name="name" value={user.name} onChange={handleInputChange} />
             <label>Username</label>
             <input className="form-control" type="text" name="username" value={user.username} onChange={handleInputChange} />
-            <button className="btn btn-success mt-3">Add new user</button>
+            <button className="uk-button uk-button-primary uk-button-small mt-3"><span uk-icon="plus-circle"></span> Add User</button>
         </form>
     )
 }

@@ -25,9 +25,9 @@ const EditUser = props => {
       <input className="form-control" type="text" name="name" value={user.name} onChange={handleInputChange} />
       <label>Username</label>
       <input className="form-control" type="text" name="username" value={user.username} onChange={handleInputChange} />
-      <button className="btn btn-primary ml-3 mt-2">Update</button>
-      <button onClick={() => props.setEditing(false)} className="btn btn-primary ml-3 mt-2">
-        Cancel
+      <button className="uk-button uk-button-primary uk-button-small ml-3 mt-3"><span uk-icon="pencil"></span> Update</button>
+      <button onClick={() => props.setEditing(false)} className="uk-button uk-button-primary uk-button-small ml-3 mt-3">
+      <span uk-icon="close"></span> Cancel
       </button>
     </form>
   )
