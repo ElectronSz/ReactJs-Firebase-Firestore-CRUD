@@ -10,6 +10,7 @@ import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import 'uikit/dist/css/uikit.min.css'
 
+import { DotLoader } from 'react-spinners';
 // loads the Icon plugin
 UIkit.use(Icons);
 
@@ -29,9 +30,14 @@ const App = () => {
 
   const [usersSize, setUsersSize] = useState(0)
 
+  const [loading, setLoading] = useState(false)
+
+  const [loader, setLoader] = useState(false)
 
   //get users from firebase
   const getUsers = () => {
+    //setLoading(true)
+    setLoader(true)
     db.collection('users')
       .onSnapshot(function (querySnapshot) {
         let list = []
@@ -40,6 +46,8 @@ const App = () => {
         })
 
         setUsers(list)
+        setLoader(false)
+        setLoading(true)
       })
   }
 
@@ -100,53 +108,70 @@ const App = () => {
   return (
     <div>
       <div className="container mt-2">
-      <div>
-        <h2>CRUD App with Hooks and Firebase Firestore</h2>
-      </div>
-      <hr />
-      <div className="row">
-      <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-        <div className="row">
-        <div className="col-md-12">
-          {editing ? (
-            <div>
-              <h2>Edit user</h2>
-              <EditUser
-                editing={editing}
-                setEditing={setEditing}
-                currentUser={currentUser}
-                updateUser={updateUser}
-              />
-            </div>
-          ) : (
-              <div>
-                <h3>Add user</h3>
-                <NewUser addUser={addUser} />
-              </div>
-            )}
-        </div>
-        </div>
-       
-        </div>
-        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
-        <div className="col-md-12">
-          <h3>Users List <Count count={usersSize} /></h3>
-          <UserTable users={users} editRow={editRow} deleteUser={deleteUser} />
-        </div>
-        </div>
-      </div>
 
-      <div className="row mt-4">
-        <div className="col-md-6">
-          
+        <div>
+          <h2>CRUD App with Hooks and Firebase Firestore</h2>
+        </div>
+        <hr />
+        <div className="row">
+          <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+            <div className="row">
+              <div className="col-md-12">
+                {editing ? (
+                  <div>
+                    <h2>Edit user</h2>
+                    <EditUser
+                      editing={editing}
+                      setEditing={setEditing}
+                      currentUser={currentUser}
+                      updateUser={updateUser}
+                    />
+                  </div>
+                ) : (
+                    <div>
+                      <h3>Add user</h3>
+                      <NewUser addUser={addUser} />
+                    </div>
+                  )}
+              </div>
             </div>
-        <div className="col-md-6">
-         
+
+          </div>
+          <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+            <div className="col-md-12">
+            <h3>Users List <Count count={usersSize} /></h3>
+
+              {
+                loading ? (
+                  <div>
+                   
+                    <UserTable users={users} editRow={editRow} deleteUser={deleteUser} />
+                  </div>
+
+                ) : (
+                    <div className="mt-4 ml-4 text-center">
+                      <DotLoader
+                        color={'#123abc'}
+                        loading={loader}
+                      />
+                    </div>
+                  )
+              }
+            </div>
+          </div>
+        </div>
+
+        <div className="row mt-4">
+          <div className="col-md-6">
+
+          </div>
+          <div className="col-md-6">
+
+          </div>
         </div>
       </div>
     </div>
-    </div>
-    
+
   )
 }
 
