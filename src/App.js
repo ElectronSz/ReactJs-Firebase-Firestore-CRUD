@@ -98,13 +98,16 @@ const App = () => {
   }
 
   return (
-    <div className="container mt-2">
+    <div>
+      <div className="container mt-2">
       <div>
         <h2>CRUD App with Hooks and Firebase Firestore</h2>
       </div>
       <hr />
       <div className="row">
-        <div className="col-md-6">
+      <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+        <div className="row">
+        <div className="col-md-12">
           {editing ? (
             <div>
               <h2>Edit user</h2>
@@ -122,21 +125,28 @@ const App = () => {
               </div>
             )}
         </div>
-        <div className="col-md-6">
+        </div>
+       
+        </div>
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+        <div className="col-md-12">
           <h3>Users List <Count count={usersSize} /></h3>
           <UserTable users={users} editRow={editRow} deleteUser={deleteUser} />
+        </div>
         </div>
       </div>
 
       <div className="row mt-4">
         <div className="col-md-6">
-          hjgjhg
+          
             </div>
         <div className="col-md-6">
-          <span uk-icon="heart"></span>
+         
         </div>
       </div>
     </div>
+    </div>
+    
   )
 }
 
