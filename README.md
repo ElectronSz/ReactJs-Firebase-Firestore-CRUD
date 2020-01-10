@@ -1,4 +1,4 @@
-# React Hooks & Firebase Firestore Application
+## React Hooks & Firebase Firestore Application
 
 #### A simple CRUD app using React Hooks, Bootstrap and Firebase Firestore
 
