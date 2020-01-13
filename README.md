@@ -7,6 +7,6 @@
 - [Tania Rascia](https://www.taniarascia.com)
 - [Lwazi Dlamini](https://electronsz.github.io/)
 
-## License
+### License
 
 This project is open source and available under the [MIT License](LICENSE).
