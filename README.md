@@ -2,7 +2,7 @@
 
 #### A simple CRUD app using React Hooks, Bootstrap and Firebase Firestore
 
-### Authors
+## Authors
 
 - [Tania Rascia](https://www.taniarascia.com)
 - [Lwazi Dlamini](https://electronsz.github.io/)
